@@ -5,7 +5,7 @@
    License: none (public domain)
 */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&family=Open+Sans&family=Overpass:wght@400;600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Open+Sans&family=Overpass:wght@400;600&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -190,6 +190,8 @@ img {
   line-height: 52.13px; }
 
 .subTitle {
+  font-family: 'Overpass';
+  letter-spacing: 2px;
   color: #F6A21A;
   font-weight: 700;
   line-height: 37px;
@@ -323,7 +325,7 @@ body {
   height: 760px; }
   .banner .logo a {
     display: block;
-    background-image: url("https://github.com/swwfleur/bicycle/blob/gh-pages/assets/images/logo_dark.png?raw=true");
+    background-image: url("https://github.com/swwfleur/bicycle/blob/master/app/assets/images/logo_dark.png?raw=true");
     width: 336px;
     height: 100px;
     text-indent: 110%;
@@ -402,6 +404,8 @@ body {
 
 .recommend {
   background: #F7F7F7; }
+  .recommend i {
+    color: #51AB5B; }
 
 .verticalCardList {
   gap: 16px; }
@@ -426,6 +430,8 @@ body {
       font-weight: 400; }
     .verticalCardList .cardText .joinbtn {
       font-weight: 700;
+      color: #51AB5B; }
+    .verticalCardList .cardText i {
       color: #51AB5B; }
 
 .wrap {
