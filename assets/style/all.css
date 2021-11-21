@@ -1,0 +1,519 @@
+@charset "UTF-8";
+/* reset css */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&family=Open+Sans&family=Overpass:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Open+Sans&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a {
+  color: #737373;
+  text-decoration: none; }
+
+/* rwd img css，可當作是 CSS Reset 其中一個 */
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle; }
+
+/* 全域 border box */
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.flex-wrap {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+
+.flex-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.j-content-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.j-content-end {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end; }
+
+.j-center-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.j-content-around {
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
+
+.j-content-evenly {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly; }
+
+.a-items-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.a-items-end {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end; }
+
+.pl-1 {
+  padding-left: 32px; }
+
+.pt-1 {
+  padding-top: 80px; }
+
+.pb-1 {
+  padding-bottom: 80px; }
+
+.mr-1 {
+  margin-right: 32px; }
+
+.mr-2 {
+  margin-right: 12px; }
+
+.mr-3 {
+  margin-right: 8px; }
+
+.mb-1 {
+  margin-bottom: 8px; }
+
+.mb-2 {
+  margin-bottom: 24px; }
+
+.mb-3 {
+  margin-bottom: 31px; }
+
+.mb-4 {
+  margin-bottom: 80px; }
+
+.mb-5 {
+  margin-bottom: 10px; }
+
+.mb-6 {
+  margin-bottom: 40px; }
+
+.mb-7 {
+  margin-bottom: 4px; }
+
+.mb-8 {
+  margin-bottom: 16px; }
+
+.mt-1 {
+  margin-top: 31px; }
+
+.text-center {
+  text-align: center; }
+
+.font-white {
+  color: #fff; }
+
+.font-sizeS {
+  font-size: 14px; }
+
+.primary-color {
+  color: #51AB5B; }
+
+.font-space {
+  letter-spacing: 1px; }
+
+.nav-font {
+  font-size: 16px;
+  line-height: 23.17px;
+  font-weight: 400;
+  letter-spacing: 2px; }
+
+.list-title {
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 2px; }
+
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 52.13px; }
+
+.subTitle {
+  color: #F6A21A;
+  font-weight: 700;
+  line-height: 37px;
+  font-family: "Open Sans";
+  font-size: 24px; }
+
+.cross {
+  position: relative;
+  width: 72px;
+  height: 72px; }
+  .cross .line1,
+  .cross .line2 {
+    border: 1px solid #fff;
+    width: 28px;
+    height: 1px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+  .cross .line1 {
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg); }
+  .cross .line2 {
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+
+.moreBtn {
+  padding: 12px;
+  background-color: transparent;
+  border: 1px solid #000;
+  letter-spacing: 2px;
+  font-size: 16px;
+  -webkit-transition: .25s;
+  -o-transition: .25s;
+  transition: .25s; }
+  .moreBtn:hover {
+    background-color: #51AB5B;
+    border: 1px solid #fff;
+    color: #fff; }
+
+.horizonCardList {
+  gap: 16px; }
+
+.horizoncardItem {
+  width: 336px;
+  background-color: #fff; }
+
+.cardPic,
+cardText {
+  width: 50%; }
+
+.cardText {
+  padding: 22px 12px; }
+  .cardText .area {
+    color: #51AB5B; }
+  .cardText .distance {
+    display: inline; }
+
+.footer {
+  background: #1F1E1D;
+  padding: 40px 0; }
+  .footer .contactInfo li {
+    -webkit-transition: 0.25s;
+    -o-transition: 0.25s;
+    transition: 0.25s; }
+    .footer .contactInfo li:hover a {
+      font-size: 1.1em;
+      color: #F6A21A; }
+  .footer .mediaList li {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.85);
+    margin-left: 18.16px;
+    -webkit-transition: 0.25s;
+    -o-transition: 0.25s;
+    transition: 0.25s; }
+    .footer .mediaList li:hover {
+      -webkit-transform: scale(1.5);
+          -ms-transform: scale(1.5);
+              transform: scale(1.5);
+      background-color: #F6A21A; }
+    .footer .mediaList li a {
+      color: #000;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%); }
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  line-height: 1.5;
+  color: #1F1E1D; }
+
+.container {
+  max-width: 1040px;
+  margin: 0 auto; }
+
+.nav {
+  background: rgba(255, 255, 255, 0.1); }
+
+.mainNav a {
+  position: relative; }
+  .mainNav a::after {
+    content: '';
+    display: block;
+    margin-top: 3px;
+    background: #F6A21A;
+    width: 0;
+    height: 2px;
+    position: absolute;
+    -webkit-transition: 0.25s;
+    -o-transition: 0.25s;
+    transition: 0.25s; }
+
+.mainNav li:hover a::after {
+  width: 69px; }
+
+.banner {
+  background-image: url("https://github.com/swwfleur/bicycle/blob/gh-pages/assets/images/banner_1.png?raw=true");
+  background-size: 100%;
+  background-position: center 60%;
+  height: 760px; }
+  .banner .logo a {
+    display: block;
+    background-image: url("https://github.com/swwfleur/bicycle/blob/gh-pages/assets/images/logo_dark.png?raw=true");
+    width: 336px;
+    height: 100px;
+    text-indent: 110%;
+    overflow: hidden;
+    white-space: nowrap; }
+
+.search {
+  gap: 148px; }
+  .search .sideNav a::after {
+    content: '';
+    display: block;
+    margin-top: 3px;
+    background: #F6A21A;
+    width: 0;
+    height: 2px;
+    position: absolute;
+    -webkit-transition: 0.25s;
+    -o-transition: 0.25s;
+    transition: 0.25s; }
+  .search .sideNav li:hover a::after {
+    width: 69px; }
+
+.searchArea {
+  border-left: 3px solid #F6A21A; }
+  .searchArea .searchBox {
+    width: 160px;
+    height: 44px;
+    background: #fff;
+    padding: 12px; }
+  .searchArea .roadSearch {
+    padding-left: 6px;
+    border: none;
+    font-size: 1rem; }
+  .searchArea .searchBox-L {
+    width: 246px; }
+  .searchArea input {
+    letter-spacing: 3px;
+    padding: 12px;
+    font-size: 16px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff; }
+  .searchArea .searchBtn {
+    cursor: pointer;
+    -webkit-transition: .25s;
+    -o-transition: .25s;
+    transition: .25s; }
+    .searchArea .searchBtn:hover {
+      background-color: #F6A21A;
+      border: 1px solid #F6A21A;
+      font-weight: bold; }
+
+.startPicList {
+  gap: 50px; }
+  .startPicList li {
+    padding: 50px;
+    width: 33%;
+    position: relative;
+    -ms-flex-negative: 0;
+        flex-shrink: 0; }
+    .startPicList li:first-child {
+      width: 35%; }
+  .startPicList img {
+    width: 150px; }
+  .startPicList .number {
+    color: #51AB5B;
+    font-size: 36px;
+    font-weight: 700;
+    position: absolute; }
+  .startPicList .arrow {
+    position: absolute;
+    bottom: 100px;
+    right: -20px;
+    font-size: 35px;
+    font-weight: bold; }
+
+.recommend {
+  background: #F7F7F7; }
+
+.verticalCardList {
+  gap: 16px; }
+  .verticalCardList .verticalCardItem {
+    background-color: #F7F7F7;
+    width: 248px; }
+  .verticalCardList .cardPic {
+    width: 248px;
+    height: 149px; }
+    .verticalCardList .cardPic img {
+      -o-object-fit: cover;
+         object-fit: cover; }
+  .verticalCardList .cardText {
+    margin: 12px 16px; }
+    .verticalCardList .cardText .activityData {
+      font-family: "Overpass";
+      font-weight: 600; }
+    .verticalCardList .cardText .activityName {
+      font-weight: 400; }
+    .verticalCardList .cardText .group {
+      font-family: "Overpass";
+      font-weight: 400; }
+    .verticalCardList .cardText .joinbtn {
+      font-weight: 700;
+      color: #51AB5B; }
+
+.wrap {
+  padding: 52px 22px 52px 33px;
+  background: rgba(255, 255, 255, 0.85);
+  height: 600px;
+  width: 423px; }
+
+.contactForm input {
+  border: none;
+  background-color: #fff;
+  padding: 11px 16px;
+  color: #1F1E1D;
+  font-size: 14px;
+  width: 353px;
+  letter-spacing: 2px; }
+
+.contactForm .inputGroup {
+  position: relative; }
+  .contactForm .inputGroup label {
+    position: absolute;
+    color: #F6A21A;
+    font-size: 11px;
+    font-weight: 500;
+    top: -10px;
+    left: 15px; }
+
+.contactForm textarea {
+  width: 353px;
+  height: 235px;
+  color: #1F1E1D;
+  font-size: 14px;
+  padding-top: 107px;
+  padding-left: 16px;
+  letter-spacing: 2px;
+  border: none; }
+
+.contactForm .clientName, .contactForm .clientTel {
+  width: 172px; }
+
+.contactForm .moreBtn {
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s; }
+  .contactForm .moreBtn:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    border: 1px solid #fff;
+    font-size: 16px; }
+
+.contact {
+  position: relative; }
+  .contact .darkArea {
+    background: #1F1E1D; }
+  .contact .darkArea2 {
+    background: #1F1E1D; }
+
+.mediaList li {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.85);
+  margin-left: 18.16px;
+  -webkit-transition: 0.25s;
+  -o-transition: 0.25s;
+  transition: 0.25s; }
+  .mediaList li:hover {
+    -webkit-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+            transform: scale(1.5);
+    background-color: #F6A21A; }
+  .mediaList li a {
+    color: #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+
+.formArea {
+  background-image: url(https://github.com/swwfleur/bicycle/blob/master/app/assets/images/free_use/free_use_2.jpg?raw=true);
+  background-position: center center;
+  height: 600px;
+  background-repeat: no-repeat; }
+
+/*# sourceMappingURL=all.css.map */
