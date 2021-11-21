@@ -1,0 +1,252 @@
+body{
+    font-family: 'Noto Sans', sans-serif;
+    line-height: 1.5;
+    color: #1F1E1D;
+}
+.container{
+    max-width: 1040px;
+    margin: 0 auto;
+}
+
+.nav{
+    background:rgba(255,255,255,.1);
+}
+
+.mainNav a {
+    position: relative;
+    &::after{
+        content: '';
+        display: block;
+        margin-top: 3px;
+        background: $secondary;
+        width: 0;
+        height: 2px;
+        position: absolute;
+        transition: 0.25s;
+    }
+}
+.mainNav li:hover a::after{
+    width: 69px;
+}
+
+.banner{
+    .logo a {
+        display: block;
+        background-image: url("https://github.com/swwfleur/bicycle/blob/gh-pages/assets/images/logo_dark.png?raw=true");
+        width: 336px;
+        height: 100px;
+        @include hide-text;
+    }
+    background-image: url("https://github.com/swwfleur/bicycle/blob/gh-pages/assets/images/banner_1.png?raw=true");
+    background-size: 100%;
+    background-position: center 60%;
+    height: 760px;
+}
+
+.search{gap: 148px;
+    .sideNav a{
+        &::after{
+            content: '';
+            display: block;
+            margin-top: 3px;
+            background: $secondary;
+            width: 0;
+            height: 2px;
+            position: absolute;
+            transition: 0.25s;
+  }
+}
+  .sideNav li:hover a::after{
+    width: 69px;
+}
+}
+
+.searchArea{
+    border-left: 3px solid $secondary;
+    .searchBox{
+        width: 160px;
+        height: 44px;
+        background: #fff;
+        padding: 12px;
+    }
+    .roadSearch{
+        padding-left: 6px;
+        border: none;
+        font-size: 1rem;
+    }
+    .searchBox-L{
+        width: 246px;
+    }
+    input{
+        letter-spacing: 3px;
+        padding: 12px;
+        font-size: 16px;
+        background-color: transparent;
+        border: 1px solid #fff;
+        color: #fff;
+    }
+    .searchBtn{
+        cursor: pointer;
+        transition: .25s;
+        &:hover{
+            background-color: $secondary;
+            border: 1px solid $secondary;
+            font-weight: bold
+        }
+    }
+}
+
+.startPicList{
+    gap: 50px;
+    li{
+        padding: 50px;
+        width: 33%;
+        position: relative;
+        flex-shrink: 0;
+        &:first-child{
+            width: 35%;
+        }
+    }
+    img{width: 150px;}
+    .number{
+        color: $primary;
+        font-size: 36px;
+        font-weight: 700;
+        position: absolute;
+    }
+    .arrow{
+        position: absolute;
+        bottom: 100px;
+        right: -20px;
+        font-size: 35px;
+        font-weight: bold;
+    }
+}
+
+.recommend{
+    background: $background;
+}
+
+
+.verticalCardList {
+    gap: 16px;
+    .verticalCardItem {
+        background-color: $background;
+        width: 248px;
+    }
+    .cardPic {
+        width: 248px;
+        height: 149px;
+        img{object-fit: cover;}
+    }
+    .cardText {
+        margin: 12px 16px;
+        .activityData {
+            font-family: "Overpass";
+            font-weight: 600;
+        }
+        .activityName{
+            font-weight: 400;
+        }
+        .group {
+            font-family: "Overpass";
+            font-weight: 400;
+        }
+        .joinbtn{
+            font-weight: 700;
+            color: $primary;
+        }
+    }
+}
+
+
+
+.wrap{
+    padding: 52px 22px 52px 33px;
+    background: rgba(255, 255, 255, 0.85);
+    height: 600px;
+    width: 423px;
+
+}
+.contactForm{
+    input{
+        border: none;
+        background-color: #fff;
+        padding: 11px 16px;
+        color:#1F1E1D;
+        font-size: 14px;
+        width: 353px;
+        letter-spacing: 2px;
+    }
+    .inputGroup{
+        position: relative;
+        label{
+            position: absolute;
+            color: $secondary;
+            font-size:11px;
+            font-weight: 500;
+            top: -10px;
+            left: 15px;
+        }
+    }
+    textarea{
+        width: 353px;
+        height: 235px;
+        color:#1F1E1D;
+        font-size: 14px;
+        padding-top: 107px;
+        padding-left: 16px;
+        letter-spacing: 2px;
+        border: none;
+    }
+    .clientName, .clientTel{
+        width: 172px;
+    }
+    .moreBtn{
+        background-color: transparent;
+        border: 1px solid rgba(0,0,0,.3);
+        cursor: pointer;
+        transition: .3s;
+        &:hover{
+            background-color: rgba(0,0,0,.3);
+            color:#fff;
+            border: 1px solid #fff;
+            font-size: 16px;
+        }
+    }
+}
+.contact{
+    position: relative;
+    .darkArea{
+        background: #1F1E1D;
+    }
+    .darkArea2{
+        background: #1F1E1D;
+    }
+}
+.mediaList li {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.85);
+    margin-left: 18.16px;
+    transition: 0.25s;
+    &:hover{
+        transform: scale(1.5);
+        background-color: $secondary;
+    }
+    a {
+        color: #000;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+.formArea{
+    background-image: url(https://github.com/swwfleur/bicycle/blob/master/app/assets/images/free_use/free_use_2.jpg?raw=true);
+    background-position: center center;
+    height: 600px;
+    background-repeat: no-repeat;
+}
