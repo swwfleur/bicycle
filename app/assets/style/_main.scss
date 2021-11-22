@@ -32,7 +32,7 @@ body{
 .banner{
     .logo a {
         display: block;
-        background-image: url("https://github.com/swwfleur/bicycle/blob/gh-pages/assets/images/logo_dark.png?raw=true");
+        background-image: url("https://github.com/swwfleur/bicycle/blob/master/app/assets/images/logo_dark.png?raw=true");
         width: 336px;
         height: 100px;
         @include hide-text;
@@ -125,6 +125,7 @@ body{
 
 .recommend{
     background: $background;
+    i{color: $primary}
 }
 
 
@@ -156,11 +157,15 @@ body{
             font-weight: 700;
             color: $primary;
         }
+        i{color:$primary}
     }
 }
 
+.darkArea{
+    background: #1F1E1D;
+}
 
-
+//表格白色底
 .wrap{
     padding: 52px 22px 52px 33px;
     background: rgba(255, 255, 255, 0.85);
@@ -168,7 +173,15 @@ body{
     width: 423px;
 
 }
+//表格背景圖
+.formArea{
+    background-image: url(https://github.com/swwfleur/bicycle/blob/master/app/assets/images/free_use/free_use_2.jpg?raw=true);
+    background-position: center center;
+    height: 600px;
+    background-repeat: no-repeat;
+}
 .contactForm{
+  //所有input設定
     input{
         border: none;
         background-color: #fff;
@@ -178,6 +191,7 @@ body{
         width: 353px;
         letter-spacing: 2px;
     }
+  //label設定
     .inputGroup{
         position: relative;
         label{
@@ -199,9 +213,11 @@ body{
         letter-spacing: 2px;
         border: none;
     }
+  //名稱﹑連絡電話
     .clientName, .clientTel{
         width: 172px;
     }
+  //送出按鈕
     .moreBtn{
         background-color: transparent;
         border: 1px solid rgba(0,0,0,.3);
@@ -214,39 +230,4 @@ body{
             font-size: 16px;
         }
     }
-}
-.contact{
-    position: relative;
-    .darkArea{
-        background: #1F1E1D;
-    }
-    .darkArea2{
-        background: #1F1E1D;
-    }
-}
-.mediaList li {
-    position: relative;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.85);
-    margin-left: 18.16px;
-    transition: 0.25s;
-    &:hover{
-        transform: scale(1.5);
-        background-color: $secondary;
-    }
-    a {
-        color: #000;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-}
-.formArea{
-    background-image: url(https://github.com/swwfleur/bicycle/blob/master/app/assets/images/free_use/free_use_2.jpg?raw=true);
-    background-position: center center;
-    height: 600px;
-    background-repeat: no-repeat;
 }

@@ -1,0 +1,113 @@
+.defaultHeader{
+    .cross{
+        .line1,.line2 {border: 1px solid #000;}
+        .line1{transform: translate(-50%,200%);}
+        .line2{transform: translate(-50%,-200%);}
+        &:hover .line1{
+            transform: translate(-50%,-50%) rotate(45deg);
+        }
+        &:hover .line2{
+            transform: translate(-50%,-50%) rotate(-45deg);
+        }
+    }
+    .logo a{
+        display: block;
+        background: url("https://github.com/swwfleur/bicycle/blob/master/app/assets/images/logo_light.png?raw=true");
+        width: 336px;
+        height: 100px;
+        @include hide-text;
+    }
+}
+
+.introArea{
+    gap: 37px;
+    .group,.introPic{
+        width: 50%;
+    }
+}
+
+.route{
+    .routeArea{position: relative;}
+    .routePic{
+        height: 374px;
+        img{width: 1038px;height: 384px;object-fit: cover;}
+    }
+    .routeText{
+        width: 240px;
+        position: absolute;
+        top: 0;
+        background-color: #fff;
+        .routeTitle{
+            background-color: $primary;
+            padding: 6px 0;
+            text-align: center;
+            color: #fff;
+            letter-spacing: 2px;
+            &:after{
+                content: '';
+                display: inline-block;
+                width: 12px;
+                height: 1px;
+                background: #fff;
+                position: absolute;
+                top: 18px;
+                right: 10px;
+                cursor: pointer;
+            }
+        }
+        .routeItem{
+            position: relative;
+            &:first-child::before{
+                content: '';
+                display: inline-block;
+                width: 2px;
+                height: 25px;
+                background: $primary;
+                position: absolute;
+                top: 20px;
+                left: 9px;
+            }
+            &:nth-child(2)::before{
+                content: '';
+                display: inline-block;
+                width: 2px;
+                height: 25px;
+                background: $primary;
+                position: absolute;
+                top: 20px;
+                left: 9px;
+            }
+            span{
+                font-size: 12px;
+                padding: 2px 7px;
+                background: $primary;
+                border-radius: 50%;
+                color: #fff;
+            }
+            p{text-indent: 48px;}
+        }
+    }
+}
+
+.nearby{
+    .nearbyItem{
+        width: 33%;
+        .listPic{
+            overflow: hidden;
+            img{height: 220px;width: 336px;object-fit: cover;
+            &:hover{
+                transform: scale(1.2);
+            }}
+        }
+        .listText{
+            padding: 18px 10px;
+        }
+        a:hover{
+            padding: 1px 12px;
+            background: $primary;
+            color:#fff;
+            border: 1px solid $primary;
+            border-radius: 12px;
+        }
+    }
+}

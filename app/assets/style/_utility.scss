@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Open+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Open+Sans&family=Overpass:wght@400;600&display=swap');
 //flex設定
 .d-flex {
     display: flex;
@@ -12,8 +12,11 @@
 .j-content-between {
     justify-content: space-between;
 }
+.j-content-start {
+    justify-content: flex-start
+}
 .j-content-end {
-    justify-content: end;
+    justify-content: flex-end;
 }
 .j-center-center {
     justify-content: center;
@@ -24,12 +27,19 @@
 .j-content-evenly {
     justify-content: space-evenly;
 }
+.a-items-start{
+    align-items: start;
+}
 .a-items-center {
     align-items: center;
 }
 .a-items-end{
     align-items: end;
 }
+.a-self-end{
+    align-self: flex-end;
+}
+
 
 //間距設定
 .pl-1 {
@@ -49,6 +59,12 @@
 }
 .mr-3{
     margin-right: 8px;
+}
+.mr-4{
+    margin-right: 22px;
+}
+.ml-1{
+    margin-left: 34px;
 }
 .mb-1 {
     margin-bottom: 8px;
@@ -78,47 +94,59 @@
     margin-top: 31px;
 }
 
-.text-center {
-    text-align: center;
-}
+.text-center {text-align: center;}
+.text-end{text-align: end}
 
 //字體設定
-.font-white {
-    color: #fff;
-}
 .font-sizeS{font-size: 14px;}
-.primary-color {
-    color: $primary;
-}
-.font-space {
-    letter-spacing: 1px;
-}
+.font-sizeM{font-size: 18px;}
+.font-bold{font-weight: bold;}
+
+.font-white {color: #fff;}
+.primary-color {color: $primary;}
+.secondary-color{color: $secondary}
+.font-grey{color: #828282;}
+.font-space {letter-spacing: 1px;}
+.ff-overpass{font-family: 'Overpass',}
 .nav-font {
     font-size: 16px;
     line-height: 23.17px;
     font-weight: 400;
     letter-spacing: 2px;
 }
+
+//標題
 .list-title {
     font-weight: 700;
     font-size: 24px;
     letter-spacing: 2px;
 }
-
+//首頁
 .title {
     font-size: 36px;
     font-weight: 700;
     line-height: 52.13px;
 }
 .subTitle {
+    font-family: 'Overpass';
+    letter-spacing: 2px;
     color: $secondary;
     font-weight: 700;
     line-height: 37px;
     font-family: "Open Sans";
     font-size: 24px;
 }
+//次頁小標
+.title2{
+    font-size: 20px;
+    font-weight: bold;
+    border-left: 2px solid $secondary;
+    padding-left: 16px;
+}
 
+// 漢堡選單
 .cross {
+    cursor: pointer;
     position: relative;
     width: 72px;
     height: 72px;
@@ -137,6 +165,7 @@
     }
 }
 
+//更多
 .moreBtn {
     padding: 12px;
     background-color: transparent;
@@ -151,6 +180,7 @@
     }
 }
 
+//卡片
 .horizonCardList {
     gap: 16px;
 }
@@ -169,5 +199,21 @@ cardText {
     }
     .distance {
         display: inline;
+    }
+}
+
+//麵包屑
+.breadcrumb {
+    letter-spacing: 2px;
+    font-size: 16px;
+    li+li ::before {
+        content: "/";
+        display: inline-block;
+    }
+    li:hover a{
+        color: $primary;
+    }
+    li:hover a::before{
+        color: #000;
     }
 }
