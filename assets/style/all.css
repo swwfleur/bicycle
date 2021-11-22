@@ -50,7 +50,7 @@ table {
   border-spacing: 0; }
 
 a {
-  color: #737373;
+  color: #1F1E1D;
   text-decoration: none; }
 
 /* rwd img css，可當作是 CSS Reset 其中一個 */
@@ -84,10 +84,15 @@ img {
       -ms-flex-pack: justify;
           justify-content: space-between; }
 
+.j-content-start {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start; }
+
 .j-content-end {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
-          justify-content: end; }
+          justify-content: flex-end; }
 
 .j-center-center {
   -webkit-box-pack: center;
@@ -103,6 +108,11 @@ img {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly; }
 
+.a-items-start {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start; }
+
 .a-items-center {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -112,6 +122,10 @@ img {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: end; }
+
+.a-self-end {
+  -ms-flex-item-align: end;
+      align-self: flex-end; }
 
 .pl-1 {
   padding-left: 32px; }
@@ -130,6 +144,12 @@ img {
 
 .mr-3 {
   margin-right: 8px; }
+
+.mr-4 {
+  margin-right: 22px; }
+
+.ml-1 {
+  margin-left: 34px; }
 
 .mb-1 {
   margin-bottom: 8px; }
@@ -161,17 +181,35 @@ img {
 .text-center {
   text-align: center; }
 
-.font-white {
-  color: #fff; }
+.text-end {
+  text-align: end; }
 
 .font-sizeS {
   font-size: 14px; }
 
+.font-sizeM {
+  font-size: 18px; }
+
+.font-bold {
+  font-weight: bold; }
+
+.font-white {
+  color: #fff; }
+
 .primary-color {
   color: #51AB5B; }
 
+.secondary-color {
+  color: #F6A21A; }
+
+.font-grey {
+  color: #828282; }
+
 .font-space {
   letter-spacing: 1px; }
+
+.ff-overpass {
+  font-family: "Overpass"; }
 
 .nav-font {
   font-size: 16px;
@@ -198,7 +236,14 @@ img {
   font-family: "Open Sans";
   font-size: 24px; }
 
+.title2 {
+  font-size: 20px;
+  font-weight: bold;
+  border-left: 2px solid #F6A21A;
+  padding-left: 16px; }
+
 .cross {
+  cursor: pointer;
   position: relative;
   width: 72px;
   height: 72px; }
@@ -254,6 +299,17 @@ cardText {
     color: #51AB5B; }
   .cardText .distance {
     display: inline; }
+
+.breadcrumb {
+  letter-spacing: 2px;
+  font-size: 16px; }
+  .breadcrumb li + li ::before {
+    content: "/";
+    display: inline-block; }
+  .breadcrumb li:hover a {
+    color: #51AB5B; }
+  .breadcrumb li:hover a::before {
+    color: #000; }
 
 .footer {
   background: #1F1E1D;
@@ -434,11 +490,20 @@ body {
     .verticalCardList .cardText i {
       color: #51AB5B; }
 
+.darkArea {
+  background: #1F1E1D; }
+
 .wrap {
   padding: 52px 22px 52px 33px;
   background: rgba(255, 255, 255, 0.85);
   height: 600px;
   width: 423px; }
+
+.formArea {
+  background-image: url(https://github.com/swwfleur/bicycle/blob/master/app/assets/images/free_use/free_use_2.jpg?raw=true);
+  background-position: center center;
+  height: 600px;
+  background-repeat: no-repeat; }
 
 .contactForm input {
   border: none;
@@ -485,41 +550,124 @@ body {
     border: 1px solid #fff;
     font-size: 16px; }
 
-.contact {
+.defaultHeader .cross .line1, .defaultHeader .cross .line2 {
+  border: 1px solid #000; }
+
+.defaultHeader .cross .line1 {
+  -webkit-transform: translate(-50%, 200%);
+      -ms-transform: translate(-50%, 200%);
+          transform: translate(-50%, 200%); }
+
+.defaultHeader .cross .line2 {
+  -webkit-transform: translate(-50%, -200%);
+      -ms-transform: translate(-50%, -200%);
+          transform: translate(-50%, -200%); }
+
+.defaultHeader .cross:hover .line1 {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+      -ms-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg); }
+
+.defaultHeader .cross:hover .line2 {
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+      -ms-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg); }
+
+.defaultHeader .logo a {
+  display: block;
+  background: url("https://github.com/swwfleur/bicycle/blob/master/app/assets/images/logo_light.png?raw=true");
+  width: 336px;
+  height: 100px;
+  text-indent: 110%;
+  overflow: hidden;
+  white-space: nowrap; }
+
+.introArea {
+  gap: 37px; }
+  .introArea .group, .introArea .introPic {
+    width: 50%; }
+
+.route .routeArea {
   position: relative; }
-  .contact .darkArea {
-    background: #1F1E1D; }
-  .contact .darkArea2 {
-    background: #1F1E1D; }
 
-.mediaList li {
-  position: relative;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.85);
-  margin-left: 18.16px;
-  -webkit-transition: 0.25s;
-  -o-transition: 0.25s;
-  transition: 0.25s; }
-  .mediaList li:hover {
-    -webkit-transform: scale(1.5);
-        -ms-transform: scale(1.5);
-            transform: scale(1.5);
-    background-color: #F6A21A; }
-  .mediaList li a {
-    color: #000;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%); }
+.route .routePic {
+  height: 374px; }
+  .route .routePic img {
+    width: 1038px;
+    height: 384px;
+    -o-object-fit: cover;
+       object-fit: cover; }
 
-.formArea {
-  background-image: url(https://github.com/swwfleur/bicycle/blob/master/app/assets/images/free_use/free_use_2.jpg?raw=true);
-  background-position: center center;
-  height: 600px;
-  background-repeat: no-repeat; }
+.route .routeText {
+  width: 240px;
+  position: absolute;
+  top: 0;
+  background-color: #fff; }
+  .route .routeText .routeTitle {
+    background-color: #51AB5B;
+    padding: 6px 0;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 2px; }
+    .route .routeText .routeTitle:after {
+      content: '';
+      display: inline-block;
+      width: 12px;
+      height: 1px;
+      background: #fff;
+      position: absolute;
+      top: 18px;
+      right: 10px;
+      cursor: pointer; }
+  .route .routeText .routeItem {
+    position: relative; }
+    .route .routeText .routeItem:first-child::before {
+      content: '';
+      display: inline-block;
+      width: 2px;
+      height: 25px;
+      background: #51AB5B;
+      position: absolute;
+      top: 20px;
+      left: 9px; }
+    .route .routeText .routeItem:nth-child(2)::before {
+      content: '';
+      display: inline-block;
+      width: 2px;
+      height: 25px;
+      background: #51AB5B;
+      position: absolute;
+      top: 20px;
+      left: 9px; }
+    .route .routeText .routeItem span {
+      font-size: 12px;
+      padding: 2px 7px;
+      background: #51AB5B;
+      border-radius: 50%;
+      color: #fff; }
+    .route .routeText .routeItem p {
+      text-indent: 48px; }
+
+.nearby .nearbyItem {
+  width: 33%; }
+  .nearby .nearbyItem .listPic {
+    overflow: hidden; }
+    .nearby .nearbyItem .listPic img {
+      height: 220px;
+      width: 336px;
+      -o-object-fit: cover;
+         object-fit: cover; }
+      .nearby .nearbyItem .listPic img:hover {
+        -webkit-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+                transform: scale(1.2); }
+  .nearby .nearbyItem .listText {
+    padding: 18px 10px; }
+  .nearby .nearbyItem a:hover {
+    padding: 1px 12px;
+    background: #51AB5B;
+    color: #fff;
+    border: 1px solid #51AB5B;
+    border-radius: 12px; }
 
 /*# sourceMappingURL=all.css.map */
